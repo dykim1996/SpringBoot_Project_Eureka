@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/trade/tradeRegist.css}">
+<title>차량 판매</title>
+</head>
+<body>
+	<div class="outer outer-trade-insert" style="margin: 100px 350px;">
+		<h2>차량 판매</h2>
+		<div class="table-area">
+			<form id="tradeRegistForm" th:action="@{/trade/regist}"
+            method="post" enctype="multipart/form-data">
+				<h3>차량 정보</h3>
+                <hr style="border: solid 2px #77CFD1;">
+                <div class="info">
+                    <table>
+                        <tr>
+                            <td>차량 모델</td>
+                            <td><input type="text" name="sellCarName"></td>
+                            
+                            <td>가격</td>
+                            <td><input type="number" name="sellPrice" placeholder="만원"></td>
+                        </tr>
+                        <tr>
+                            <td>연식</td>
+                            <td><select name="sellCarYear">
+                                <option selected>연식 선택</option>
+                                <option value="2023">2023년</option>
+                                <option value="2022">2022년</option>
+                                <option value="2021">2021년</option>
+                                <option value="2020">2020년</option>
+                                <option value="2019">2019년</option>
+                                <option value="2018">2018년</option>
+                                <option value="2017">2017년</option>
+                                <option value="2016">2016년</option>
+                                <option value="2015">2015년</option>
+                                <option value="2014">2014년</option>
+                                <option value="2013">2013년</option>
+                                <option value="2012">2012년</option>
+                                <option value="2011">2011년</option>
+                                <option value="2010">2010년</option>
+                                <option value="2009">2009년</option>
+                                <option value="2008">2008년</option>
+                                <option value="2007">2007년</option>
+                                <option value="2006">2006년</option>
+                                <option value="2005">2005년</option>
+                                <option value="2004">2004년</option>
+                                <option value="2003">2003년</option>
+                                <option value="2002">2002년</option>
+                                <option value="2001">2001년</option>
+                                <option value="2000">2000년</option>
+                            </select></td>
+                            
+                            <td>연료</td>
+                            <td><select name="sellFuel">
+                                <option selected>연료 선택</option>
+                                <option value="가솔린">가솔린</option>
+                                <option value="디젤">디젤</option>
+                                <option value="LPG">LPG</option>
+                                <option value="하이브리드">하이브리드</option>
+                                <option value="전기">전기</option>
+                                <option value="기타">기타</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td>주행 거리</td>
+                            <td><input type="number" name="sellMileage" placeholder="km"></td>
+                            
+                            <td>지역</td>
+                            <td><select name="region.regionCode">
+                                <option selected>지역 선택</option>
+                                <option value="1">서울</option>
+                                <option value="2">인천</option>
+                                <option value="3">대전</option>
+                                <option value="4">대구</option>
+                                <option value="5">광주</option>
+                                <option value="6">울산</option>
+                                <option value="7">세종</option>
+                                <option value="8">경기</option>
+                                <option value="9">강원</option>
+                                <option value="10">경남</option>
+                                <option value="11">경북</option>
+                                <option value="12">전남</option>
+                                <option value="13">전북</option>
+                                <option value="14">충남</option>
+                                <option value="15">충북</option>
+                                <option value="16">제주</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td>변속기</td>
+                            <td class="select">
+                                <input type="radio" id="auto" name="sellTransmission" value="오토"/><label for="auto">오토</label>		
+                                <input type="radio" id="manual" name="sellTransmission" value="수동"/><label for="manual">수동</label>			
+                            </td>
+                            <td>배기량</td>
+                            <td><input type="number" name="sellDisplacement" placeholder="cc"></td>
+
+                        </tr>
+                        <tr>
+                            <td>차종</td>
+                            <td><select name="model.modelCode">
+                                <option selected>차종 선택</option>
+                                <option value="1">경차</option>
+                                <option value="2">소형</option>
+                                <option value="3">준중형</option>
+                                <option value="4">중형</option>
+                                <option value="5">대형</option>
+                                <option value="6">스포츠카</option>
+                                <option value="7">SUV</option>
+                                <option value="8">트럭</option>
+                                <option value="9">기타</option>
+                            </select></td>
+                            
+                            <td>색상</td>
+                            <td><select name="color.colorCode">
+                                <option selected>색상 선택</option>
+                                <option value="1">검정색</option>
+                                <option value="2">흰색</option>
+                                <option value="3">은색</option>
+                                <option value="4">회색</option>
+                                <option value="5">빨간색</option>
+                                <option value="6">파란색</option>
+                                <option value="7">초록색</option>
+                                <option value="8">노란색</option>
+                                <option value="9">기타</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <td>사고 이력</td>
+                            <td><div class="accident">
+                                <input type="file" name="attachImage" accept="image/jpeg, image/png">
+                            </div></td>
+                            <td>국산/수입</td>
+                            <td class="select">
+                                <input type="radio" id="domestic" name="sellCountry" value="국산"/><label for="domestic">국산</label>		
+                                <input type="radio" id="imported" name="sellCountry" value="수입"/><label for="imported">수입</label>			
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="photo">
+                    <table>
+                        <tr>
+                            <td>사진 첨부</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="image-area">
+                                    <img style="width: 380px; height: 200px">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="image-area">
+                                    <img style="width: 200px; height: 150px">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="image-area">
+                                    <img style="width: 200px; height: 150px">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="image-area">
+                                    <img style="width: 200px; height: 150px">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="thumbnail-file-area" style="display: none;">
+                        <input type="file" id="photo" name="attachImage" accept="image/jpeg, image/png">
+                        <input type="file" id="photo" name="attachImage" accept="image/jpeg, image/png">
+                        <input type="file" id="photo" name="attachImage" accept="image/jpeg, image/png">
+                        <input type="file" id="photo" name="attachImage" accept="image/jpeg, image/png">
+                    </div>
+                </div>
+				<h3>차량 옵션</h3>
+                <hr style="border: solid 2px #77CFD1;">
+                <div class="opt">
+                    <table>
+                        <tr>
+                            <td><input type="checkbox" name="sellCarOpt" value="ABS"/> ABS</td>
+                            <td><input type="checkbox" name="sellCarOpt" value="전동트렁크"/> 전동트렁크</td>
+                            <td><input type="checkbox" name="sellCarOpt" value="네비게이션"/> 네비게이션</td>
+                            <td><input type="checkbox" name="sellCarOpt" value="블랙박스"/> 블랙박스</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="sellCarOpt" value="후방카메라"/> 후방카메라</td>
+                            <td><input type="checkbox" name="sellCarOpt" value="하이패스"/> 하이패스</td>
+                            <td><input type="checkbox" name="sellCarOpt" value="썬루프"/> 썬루프</td>
+                            <td><input type="checkbox" name="sellCarOpt" value="스마트키"/> 스마트키</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="sellCarOpt" value="핸들열선"/> 핸들열선</td>
+                            <td><input type="checkbox" name="sellCarOpt" value="가죽시트"/> 가죽시트</td>
+                            <td><input type="checkbox" name="sellCarOpt" value="열선시트"/> 열선시트</td>
+                            <td><input type="checkbox" name="sellCarOpt" value="전동시트"/> 전동시트</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="sellCarOpt" value="HID"/> HID</td>
+                            <td><input type="checkbox" name="sellCarOpt" value="레인센서와이퍼"/> 레인센서와이퍼</td>
+                            <td><input type="checkbox" name="sellCarOpt" value="블루투스(통화)"/> 블루투스(통화)</td>
+                            <td><input type="checkbox" name="sellCarOpt" value="블루투스(스트리밍)"/> 블루투스(스트리밍)</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="sellCarOpt" value="자동도어잠금"/> 자동도어잠금</td>
+                            <td><input type="checkbox" name="sellCarOpt" value="자동주차시스템"/> 자동주차시스템</td>
+                            <td><input type="checkbox" name="sellCarOpt" value="자동주행시스템"/> 자동주행시스템</td>
+                            <td><input type="checkbox" name="sellCarOpt" value="LDWS"/> LDWS</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="sellCarOpt" value="TPMS"/> TPMS</td>
+                            <td><input type="checkbox" name="sellCarOpt" value="도난경보기"/> 도난경보기</td>
+                            <td><input type="checkbox" name="sellCarOpt" value="전방감지센서"/> 전방감지센서</td>
+                            <td><input type="checkbox" name="sellCarOpt" value="후방감지센서"/> 후방감지센서</td>
+                        </tr>
+                    </table>
+                </div>
+				<h3>차량 설명</h3>
+                <hr style="border: solid 2px #77CFD1;">
+				<textarea name="sellCarDes"></textarea>
+				
+				<h3>판매글 프리미엄 등록</h3>
+                <hr style="border: solid 2px #77CFD1;">
+				<div class="pay">
+					<span style="color: rgb(107, 105, 105);">차량 판매글을 목록의 최상단으로 올려 광고할 수 있습니다.</span>
+					<button type="button">결제하기</button>
+				</div>
+				<div class="btn">
+		            <button type="submit" class="btn1">등록</button>
+		            <button type="button"class="btn2">취소</button>
+				</div>
+			</form>
+		</div>
+	</div>
+    <script>
+        (function(){
+            const fileElements = document.querySelectorAll("#photo");
+            const imageArea = document.querySelectorAll(".image-area");
+            imageArea.forEach(item => item.addEventListener('click', open));
+            fileElements.forEach(item => item.addEventListener('change', preview));
+
+            function open() {
+                const index = Array.from(imageArea).indexOf(this);
+                fileElements[index].click();
+            }
+
+            function preview() {
+                const index = Array.from(fileElements).indexOf(this);
+                console.log(this);
+                console.log(this.files, this.files[0]);
+                if(this.files && this.files[0]) {
+                    const reader = new FileReader();
+                    reader.readAsDataURL(this.files[0]);
+                    reader.onload = function() {
+                        if(index === 0) {
+                            imageArea[index].innerHTML = `<img src='${reader.result}' style='width: 380px; height: 200px'>`;
+                        } else {
+                            imageArea[index].innerHTML = `<img src='${reader.result}' style='width: 200px; height: 150px'>`;
+                        }
+                    }
+                }
+
+            }
+        })();
+    </script>
+</body>
+</html>

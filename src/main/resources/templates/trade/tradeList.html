@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/trade/tradeList.css}">
+<title>매물 보기</title>
+</head>
+<body>
+    
+    <div class="outer outer-trade-list" style="margin: 100px 350px;">
+        <div class="list-title">
+            <h2>매물 보기</h2>
+            <div class="search">
+                <input type="text" name="search" placeholder="  Search">
+                <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
+            </div>
+        </div>
+        <div class="category-area">
+            <div class="container1">
+                <div class="container1-item"><h5>차종</h5></div>
+                <div class="container1-item"><select name="model.modelCode">
+                    <option selected>차종 선택</option>
+                    <option value="1">경차</option>
+                    <option value="2">소형</option>
+                    <option value="3">준중형</option>
+                    <option value="4">중형</option>
+                    <option value="5">대형</option>
+                    <option value="6">스포츠카</option>
+                    <option value="7">SUV</option>
+                    <option value="8">트럭</option>
+                    <option value="9">기타</option>
+                </select></div>
+
+                <div class="container1-item"><h5>연식</h5></div>
+                <div class="container1-item"><select name="carYear">
+                    <option selected>연식 선택</option>
+                    <option value="2023">2023년</option>
+                    <option value="2022">2022년</option>
+                    <option value="2021">2021년</option>
+                    <option value="2020">2020년</option>
+                    <option value="2019">2019년</option>
+                    <option value="2018">2018년</option>
+                    <option value="2017">2017년</option>
+                    <option value="2016">2016년</option>
+                    <option value="2015">2015년</option>
+                    <option value="2014">2014년</option>
+                    <option value="2013">2013년</option>
+                    <option value="2012">2012년</option>
+                    <option value="2011">2011년</option>
+                    <option value="2010">2010년</option>
+                    <option value="2009">2009년</option>
+                    <option value="2008">2008년</option>
+                    <option value="2007">2007년</option>
+                    <option value="2006">2006년</option>
+                    <option value="2005">2005년</option>
+                    <option value="2004">2004년</option>
+                    <option value="2003">2003년</option>
+                    <option value="2002">2002년</option>
+                    <option value="2001">2001년</option>
+                    <option value="2000">2000년</option>
+                </select></div>
+
+                <div class="container1-item"><h5>지역</h5></div>
+                <div class="container1-item"><select name="region.regionCode">
+                    <option selected>지역 선택</option>
+                    <option value="1">서울</option>
+                    <option value="2">인천</option>
+                    <option value="3">대전</option>
+                    <option value="4">대구</option>
+                    <option value="5">광주</option>
+                    <option value="6">울산</option>
+                    <option value="7">세종</option>
+                    <option value="8">경기</option>
+                    <option value="9">강원</option>
+                    <option value="10">경남</option>
+                    <option value="11">경북</option>
+                    <option value="12">전남</option>
+                    <option value="13">전북</option>
+                    <option value="14">충남</option>
+                    <option value="15">충북</option>
+                    <option value="16">제주</option>
+                </select></div>
+            </div>
+            <div class="container1">
+                <div class="container1-item"><h5>연료</h5></div>
+                <div class="container1-item"><select name="fuel">
+                    <option selected>연료 선택</option>
+                    <option value="가솔린">가솔린</option>
+                    <option value="디젤">디젤</option>
+                    <option value="LPG">LPG</option>
+                    <option value="하이브리드">하이브리드</option>
+                    <option value="전기">전기</option>
+                    <option value="기타">기타</option>
+                </select></div>
+
+                <div class="container1-item"><h5>국산/수입</h5></div>
+                <div class="container1-item">
+                    <div class="select">
+                        <input type="radio" id="domestic" name="country" value="국산"/><label for="domestic">국산</label>		
+                        <input type="radio" id="imported" name="country" value="수입"/><label for="imported">수입</label>
+                    </div>
+                </div>
+
+                <div class="container1-item"><h5>가격</h5></div>
+                <div class="container1-item"><select name="carPrice">
+                    <option selected>가격 선택</option>
+                    <option value="1">1,000만원 미만</option>
+                    <option value="2">1,000만원 ~ 3,000만원</option>
+                    <option value="3">3,001만원 ~ 5,000만원</option>
+                    <option value="4">5,001만원 ~ 1억원</option>
+                    <option value="5">1억원 초과</option>
+                </select></div>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>

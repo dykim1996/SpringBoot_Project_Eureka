@@ -1,0 +1,156 @@
+@charset "UTF-8";
+h3 {
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+.info table {
+    width: 1200px;
+    margin: 20px 10px;
+    border-collapse: separate;
+    border-spacing: 80px 20px;
+}
+.photo table {
+    width: 1000px;
+    margin: auto;
+}
+.opt table {
+    width: 1200px;
+    margin: 20px auto;
+    border-collapse: separate;
+    border-spacing: 80px 20px;
+}
+input::placeholder {
+    text-align: right;
+}
+input[type=text] {
+    height: 20px;
+}
+input[type=number] {
+    height: 20px;
+}
+input[type=checkbox] {
+    accent-color: #2e9ea0;
+}
+input::file-selector-button {
+    display: inline-block;
+    padding: 5px 25px;
+    color: black;
+    font-size: 12px;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+input::file-selector-button:active {
+    position: relative;
+    top: 1px;
+}
+.select input[type=radio]{
+    display: none;
+}
+.select input[type=radio]+label{
+    display: inline-block;
+    cursor: pointer;
+    height: 28px;
+    width: 50px;
+    border: 1px solid #64afb1;
+    border-radius: 15px;
+    line-height: 24px;
+    text-align: center;
+    font-size:12px;
+    font-weight: bold;
+    padding-top: 3px;
+}
+.select input[type=radio]+label{
+    background-color: #fff;
+    color: #3d3d3d;
+}
+.select input[type=radio]:checked+label{
+    background-color: #77CFD1;
+    color: #fff;
+}
+select {
+    width: 120px;
+    height: 25px;
+    text-align: center;
+    border-radius: 8px;
+    border: 2px solid #77CFD1;
+    -ms-overflow-style: none;
+}
+select::-webkit-scrollbar {
+    display:none;
+}
+textarea {
+	width: 900px;
+    height: 200px;
+    margin: 40px 100px;
+    resize: none;
+    border-radius: 10px;
+}
+button {
+	background-color:#ffffff;
+	border-radius:20px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-size:12px;
+	padding:5px 25px;
+	text-decoration:none;
+}
+button:active {
+	position:relative;
+	top:1px;
+}
+.pay {
+    margin: 50px 100px;
+}
+.pay button {
+    margin-left: 30px;
+}
+.btn {
+    margin: 150px;
+    text-align: center;
+}
+.btn1 {
+	box-shadow: 1px 4px 0px 0px #64b8b9;
+	background-color:#77cfd1;
+	border-radius:15px;
+    border:1px solid #6fb6b8;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:13px;
+	font-weight:bold;
+	padding:10px 17px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #c2c1c1;
+    margin: 0 5px;
+}
+.btn1:hover {
+	background-color:#7dd1d1;
+}
+.btn2 {
+	box-shadow: 1px 4px 0px 0px #bbbaba;
+	background-color:#ffffff;
+	border-radius:15px;
+	border:1px solid #707070;
+	display:inline-block;
+	cursor:pointer;
+	color:black;
+	font-size:13px;
+	font-weight:bold;
+	padding:10px 17px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #c2c1c1;
+    margin: 0 5px;
+}
+.btn2:hover {
+	background-color:white;
+}
+.btn1:active, .btn2:active {
+	position:relative;
+	top:2px;
+}
