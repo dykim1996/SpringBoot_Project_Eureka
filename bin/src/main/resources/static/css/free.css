@@ -4,7 +4,6 @@
 #free {
 	background-color:#77CFD1;
 	font-size : 25px;
-	/* margin : 200px auto 0 auto; */
 	margin : auto;
 	padding : 5px 0 10px 15px;
 	width : 60%;
@@ -16,6 +15,14 @@
 	padding : 5px 0 10px 15px;
 	width : 60%;
 }
+#title {
+	background-color:#77CFD1;
+	font-size : 25px;
+	width : 60%;
+	margin : auto;
+	padding : 5px 0 10px 15px;
+}
+
 
 #search{
 	top : 80%;
@@ -24,15 +31,21 @@
 }
 
 
+
+/* make */
 #freemake {
+	margin : auto;
 	text-align: center;
 }
 
 #emdfhra {
 	text-align: center;
-	padding : 50px;
+	margin : auto;
 	
 }
+
+
+
 
 #gdsImg {
 	margin-left : 23%;
@@ -88,4 +101,61 @@
 .search-btn{
 	width : 60px;
 	line-height : 30px;
+}
+
+
+
+/* freeDetail */
+.xkdlxmf{
+	text-align : left;
+}
+
+.zkdnsxm{
+	text-align : right;
+	padding-right : 10px;
+	opacity : 0.5;
+}
+
+.aj{
+	text-align : right;
+	padding-left : 20%;
+	opacity : 0.5;
+}
+
+#content{
+	font-size : 25px;
+	width : 60%;
+	margin : auto;
+	padding-top : 50px;
+	padding-left : 1%;
+}
+
+
+#detail {
+	background-color:#77CFD1;
+	font-size : 25px;
+	margin : auto;
+	padding : 5px 0 10px 15px;
+	width : 60%;
+}
+
+
+
+
+/* 댓글 */
+#registReply{
+	font-size : 20px;
+	padding: 30px 10px;
+	border-radius: 5px;
+	color : white;
+	background-color: #77CFD1;
+	border : 0;
+}
+#replyWrite{
+	padding-top : 15%;	
+}
+
+.eotrmf{
+	font-size : 25px;
+	padding-left : 10px;
 }

@@ -1,0 +1,132 @@
+/*공통*/
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+aside{
+    display: inline;
+    float: left;
+    position: relative;
+    min-width:160px;
+    min-height: 750px; 
+    height: 100vh;
+    margin-top:0;
+    margin-bottom: 0;
+    padding: 10px 0;
+    text-align: center;
+    gap: 10px;
+    border-right: 1px solid gray ;
+    transition: all 0.5x ease;
+
+}
+
+nav a{
+    text-decoration: none;
+    color:black;
+    margin:2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+
+}
+
+nav a:hover{
+    color: #77cfd1;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+}
+
+.part1{
+   position: relative;
+   display: flex;
+}
+.searchTitle{
+	/*margin-top: 50px;
+    margin-left: 150px;*/
+    margin: 50px auto 0 auto;
+    
+    width: 700px;
+    border-bottom: 1px solid #77cfd1;
+} 
+
+
+.menu-area{
+	border-bottom: 2px solid #77cfd1;
+}
+
+li a{text-decoration: none; 
+	 color:black;
+}
+
+li a:hover{
+	  color: #77cfd1;
+}
+
+.material-icons{
+	
+    position: absolute;
+    margin-top: 0px;
+    margin-left: -28px;
+}
+#updateMember{
+	background-color:transparent;
+	border:0;
+	outline:0;
+}
+
+#updateMember:hover{
+	  color: #77cfd1;
+}
+
+#logout{
+	background-color:transparent;
+	border:0;
+	outline:0;
+}
+
+#logout:hover{
+	  color: #77cfd1;
+}
+
+#logo{
+	margin-left:60px;
+}
+
+
+
+
+
+
+table{
+
+    border-collapse: collapse;
+    width:700px;
+   
+  
+}
+
+
+.member tr {
+    border-bottom: 1px solid #77cfd1;;
+} 
+
+.member tr:last-child {
+    border-bottom: none;
+}
+
+th,td {
+    text-align: center;
+    padding: 8px;
+}
+
+
+/*페이징바*/
+.paging button{
+	background-color:transparent;
+	border:0;
+	outline:0;
+}

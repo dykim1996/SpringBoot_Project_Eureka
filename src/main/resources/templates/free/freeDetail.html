@@ -8,7 +8,9 @@
 </head>
 <body>
 	<div th:replace="common/header.html"></div>
-		<table id="detail">
+	
+	
+	<table id="detail" margin-top="20px">
 	<tr>
 		<th class="xkdlxmf" th:text="${ free.freeTitle }"></th>
 		<th class="zkdnsxm" th:text="|조회수 ${ free.freeCount } / ${ free.freeDate }|"></th>
@@ -16,7 +18,7 @@
 	</tr>
 	</table>
 
-	    <p id="content" th:text="${ free.freeContent }"></p>
+	    <p id="content" th:text="${ free.freeContent }" margin-top="20px"></p>
 
 	  <!-- 댓글 작성용 table -->  
 	<table id="replyWrite" style="margin:auto;">

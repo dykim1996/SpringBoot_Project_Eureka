@@ -92,7 +92,7 @@ public class MypageController {
 	    	String address = zipCode + "$" + address1 + "$" + address2;
 	    	updateMember.setAddress(address);
 	    	updateMember.setPhone(updateMember.getPhone().replace("-", ""));
-	    	/* 로그인 멤버 정보로부터 가져온 pk를 update용 member dto에 전달 */
+	    	
 	    	updateMember.setMemberId(loginMember.getMemberId());
 	    	
 	    	log.info("[MemberController] modifyMember request Member : {}", updateMember);

@@ -3,29 +3,34 @@
 	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 <link rel="stylesheet" type="text/css" th:href="@{/css/free.css}">
+<script type="text/javascript" th:src="@{/js/event.js}"></script>
+<script>
+	const message = '[[${message}]]';
+	message && alert(message);
+</script>
 </head>
 <body>
 <div th:replace="common/header.html"></div>
 	<div class="table-area" style="text-align: center;">
 	<table id="free">
 	<tr>
-		<th style="width: 30px">번호</th>
-		<th style="width: 300px">제목</th>
-		<!-- <th style="width: 100px">아이디</th> -->
+		<th style="width: 50px">번호</th>
+		<th style="width: 450px">제목</th>
+		<th style="width: 100px">아이디</th>
 		<th style="width: 100px">조회수</th>
-		<th style="width: 50px">등록일</th>
+		<th style="width: 100px">등록일</th>
 	</tr>
 	</table>
 	<table id="free2">
 	<tr th:each="free : ${ list }"
 		th:onclick="|location.href='/free/detail?freeNo=${free.freeNo}'|"
 		style="cursor:pointer;">
-		<td th:text="${ free.freeNo }"></td>
-		<td th:text="${ free.freeTitle }"></td>
-		<td th:text="${ free.freeCount }"></td>
-		<td th:text="${ free.freeDate }"></td>
+		<td style="width: 50px" th:text="${ free.freeNo }"></td>
+		<td style="width: 450px" th:text="${ free.freeTitle }"></td>
+		<td style="width: 100px" th:text="${ free.memberId.memberId }"></td>
+		<td style="width: 100px" th:text="${ free.freeCount }"></td>
+		<td style="width: 100px" th:text="${ free.freeDate }"></td>
 	</tr>
 	</table>
 	</div>
@@ -110,8 +115,9 @@
 			</form>
 
 			<th:block sec:authorize="isAuthenticated()">
-				<button class="make-btn" id="writeBoard">글쓰기</button>
+				<button class="make-btn" id="writeBoard" onclick="location.href='/free/make'">글쓰기</button>
 			</th:block>
 		</div>
+		
 </body>
 </html>

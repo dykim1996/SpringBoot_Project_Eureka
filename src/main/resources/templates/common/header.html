@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
-
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <link rel="stylesheet" th:href="@{/css/common.css}">
     <div class="header">
     
-        <h1 align="center">유레카 유레카 신나는 노래</h1>
+    	<img src="../images/로고(글자포함)ver1.png" onclick="location.href='/'" width="120px" id="logo">
+    
         
         <div class="login-area" align="right">
         
@@ -29,9 +31,13 @@
     <div class="menu-area">
         <div class="nav-area">
             <ul style="display:flex; list-style-type:none; justify-content:center;">
-                <li style="padding-right:20px;"><a th:href="@{/}">홈으로</a></li>
-                <li style="padding-right:20px;"><a th:href="@{/free/list}">게시판</a></li>
-                <li style="padding-right:20px;"><a th:href="@{/thumbnail/list}">사진게시판</a></li>
+                <li style="padding-right:45px;"><a th:href="@{/}">홈으로</a></li>
+                 <li style="padding-right:45px;"><a th:href="@{/}">판매</a></li>
+                  <li style="padding-right:45px;"><a th:href="@{/}">구매</a></li>
+                  <li style="padding-right:45px;"><a th:href="@{/free/list}">자유게시판</a></li>
+                  <li style="padding-right:60px;"><a th:href="@{/}">공지사항</a></li>
+                <li style="padding-right:60px;"><a th:href="@{/admin/search}"><span class="material-icons">settings</span>회원관리</a></li>
+                <li style="padding-right:30px;"><a th:href="@{/admin/list2}"><span class="material-icons">leaderboard</span>수익금</a></li>
             </ul>
         </div>
     </div>

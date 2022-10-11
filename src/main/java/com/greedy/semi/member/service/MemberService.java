@@ -1,10 +1,12 @@
 package com.greedy.semi.member.service;
 
-import java.util.Optional;
+import java.awt.print.Pageable;
 
 import javax.transaction.Transactional;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.greedy.semi.member.dto.MemberDTO;
@@ -18,6 +20,10 @@ public class MemberService {
 	
 	private final MemberRepository memberRepository;
 	private final ModelMapper modelMapper;
+	private int ACC_SECESSION_YN;
+	private Object Sort;
+	private Object SORT_BY;
+	private Object member;
 	
 	public MemberService(MemberRepository memberRepository, ModelMapper modelMapper) {
 		this.memberRepository = memberRepository;
@@ -60,6 +66,7 @@ public class MemberService {
 	            return null;
 	       return member.getMemberId();
 	    }
+
 
 	}
 	
