@@ -11,6 +11,13 @@ public interface AdminMemberRepository extends JpaRepository<Member, Long> {
 
 	@Query("SELECT m FROM Member m WHERE m.memberStatus = 'N'")
 	Page<Member> findMemberList(Pageable pageable);
+
+	Member findByMemberId(String memberId);
+
+	
+
+	
+
 	
 	
 

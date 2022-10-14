@@ -12,5 +12,6 @@ public interface FreeReplyRepository extends JpaRepository<FreeReply, Long> {
 
 	FreeReply findByReplyNo(Long replyNo);
 
+	
 }
 

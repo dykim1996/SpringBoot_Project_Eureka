@@ -20,17 +20,17 @@ import lombok.Setter;
 @Entity
 @Table(name = "ATTACH_FILE")
 @SequenceGenerator(
-		name = "ATTACH_SEQ_GENERATOR", 
-		sequenceName = "SEQ_FILE_NO", 
+		name = "FREE_ATTACH_SEQ_GENERATOR", 
+		sequenceName = "SEQ_ATTACH_FILE_NO", 
 		initialValue = 1, 
 		allocationSize = 1
 )
 @DynamicInsert
-public class attachfile {
+public class FreeAttachFile {
 
 	@Id
 	@Column(name = "FILE_NO")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ATTACH_SEQ_GENERATOR")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "FREE_ATTACH_SEQ_GENERATOR")
 	private Long fileNo;
 	
 	@Column(name = "FILE_ORGNAME")
@@ -50,13 +50,7 @@ public class attachfile {
 	
 	@Column(name = "THUM_NAME")
 	private String thumName;
-	
-	@Column(name = "REF_SELL_NO")
-	private Long refSellNo;
-	
-	@Column(name = "REF_NOTI_NO")
-	private Long refNotiNo;
-	
+
 	@Column(name = "REF_FREE_NO")
 	private Long refFreeNo;
 }

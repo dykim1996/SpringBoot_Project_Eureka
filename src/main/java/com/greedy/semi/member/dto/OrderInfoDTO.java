@@ -7,9 +7,9 @@ import lombok.Data;
 
 @Data
 public class OrderInfoDTO {
-	private int orderCode;
-	private MemberDTO memberId;
-	private ProductDTO productCode;
-	private TradeDTO sellNo;
+	private Long orderCode;
+	private MemberDTO member;
+	private ProductDTO product;
+	private TradeDTO trade;
 	
 }

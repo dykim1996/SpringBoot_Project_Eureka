@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,10 +23,12 @@ import com.greedy.semi.member.entity.Member;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @NoArgsConstructor
+@ToString
 @Entity
 @Table(name = "SELL")
 @SequenceGenerator(name = "TRADE_SEQ_GENERATOR", sequenceName = "SEQ_SELL_NO", initialValue = 1, allocationSize = 1)
@@ -95,7 +98,7 @@ public class Trade {
 	@Column(name = "SELL_DISPLACEMENT")
 	private Long sellDisplacement;
 	
-	@OneToMany(cascade = CascadeType.PERSIST)
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "REF_SELL_NO")
 	private List<TradeAttachFile> attachFileList;
 	

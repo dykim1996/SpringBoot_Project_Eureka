@@ -4,15 +4,20 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" th:href="@{/css/free.css}">
 <script type="text/javascript" th:src="@{/js/event.js}"></script>
+<script>
+	const message = '[[${message}]]';
+	message && alert(message);
+</script>
 </head>
 <body>
 	<div th:replace="common/header.html"></div>
-	<div class=freemake>
+	
+	<!-- <div class=freemake>
 	<form id="boardRegistForm" th:action="@{/free/make}" method="post">
 
-	<input class="title" type="text" placeholder="제목을 입력해주세요." name=freeTitle><br>
+ 	<input class="title" type="text" placeholder="제목을 입력해주세요." name=freeTitle><br> 
 
-	<input class="content" type="text" placeholder="내용을 입력해주세요." name=freeContent>
+ 	<input class="content" type="text" placeholder="내용을 입력해주세요." name=freeContent> 
 
 	<input type="file" id="gdsImg" name="file" />
 	
@@ -23,7 +28,28 @@
 	</div>
 	
 	</form>
+	</div> -->
+		<div class="freemake">
+			<form id="boardRegistForm" th:action="@{/free/make}" method="post">
+				<table style="margin: auto;">
+
+					<tr>
+						<td><input type="text" name="freeTitle" placeholder="제목을 입력해주세요."
+							style="width: 1070px;" class="title"></td>
+					</tr>
+					<tr>
+						<td><textarea name="freeContent" placeholder="내용을 입력해주세요."
+								rows="7" style="resize: none;" class="content"></textarea></td>
+					</tr>
+				</table>
+				<input type="file" id="gdsImg" name="file" />
+	<div id=emdfhra>
+	
+	<button class="emdfhr" type="submit">등록</button>
+	<button class="cnlth" type="submit" onclick="location.href='/free/list'">취소</button>
 	</div>
+			</form>
+		</div>
 	<div th:replace="common/footer.html"></div>
 </body>
 </html>

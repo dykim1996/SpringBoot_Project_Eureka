@@ -10,6 +10,9 @@ li{
 }
 
 a {text-decoration: none; color: #999; cursor: pointer;}
+.date {
+	color: #999;
+}
 
 .text-left {text-align: left;}
 .text-center {text-align: center;}
@@ -54,6 +57,18 @@ a {text-decoration: none; color: #999; cursor: pointer;}
     content: '';
     display: block;
     clear: both;
+}
+
+.car-detail-info02 table {
+    width: 1200px;
+    margin: 20px auto;
+    border-collapse: separate;
+    border-spacing: 80px 20px;
+}
+
+.car-detail-info02 img {
+	width: 15px;
+	height: 15px;
 }
 
 .car-detail-info03 > div {min-height: 250px;}

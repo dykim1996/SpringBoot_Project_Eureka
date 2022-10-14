@@ -1,6 +1,7 @@
 package com.greedy.semi.free.dto;
 
 import java.sql.Date;
+import java.util.List;
 
 import com.greedy.semi.member.dto.MemberDTO;
 
@@ -17,5 +18,5 @@ public class FreeDTO {
 	private Date freeUpdate;
 	private MemberDTO memberId;
 	private int freeCount;
-
+	private List<FreeAttachFileDTO> attachFileList;
 }

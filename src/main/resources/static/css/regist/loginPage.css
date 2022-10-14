@@ -1,15 +1,26 @@
 @charset "UTF-8";
 
 /* 로그인 페이지 */
+.login_container {
+  width: 600px;
+  height: 600px;
+  text-align: center;
+ 
+
+}
+
 a{
 	color : black;
 	text-decoration: none;	
+	font-size : 1em;
 }
 .user_login{
-	width: 220px;
-	height: 35px;
+	width: 300px;
+	height: 50px;
 	background: #77CFD1;
 	border: 1px solid #000000;
+	font-size : 1em;
+	
 }
 .user_login:hover {
 
@@ -21,26 +32,24 @@ a{
 }
 
 .user_login:focus {
-    background: pink;
+    background:#77CFD1;
     color: white;
+    
  
 }
 
 .login_container {
-  position: absolute;
-  width: 400px;
+  width: 600px;
   height: 400px;
-  text-align: center;
-  margin-left: -200px;
-  margin-top: -200px;
-  left: 50%;
-  top: 50%;
+
 
 }
 
 .user_id:hover {
-    background: pink;
+    background:#77CFD1;
  	cursor: pointer;
+ 	color: white;
+ 	
 }
 
 .user_id:focus {
@@ -48,20 +57,22 @@ a{
 }
 
 input.user_id {
-    width: 220px;  height: 30px;
+    width: 300px;  height: 50px;
     border: 1px solid #000000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
+    font-size : 1em;
 }
 
 input.user_password {
-	width: 220px; height: 30px;
+	width: 300px; height: 50px;
 	 border: 1px solid #000000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
+	font-size : 1em;
 }
 .user_password:hover {
-    background: pink;
+    background:#77CFD1;
  	cursor: pointer;
 }
 .user_password:focus {
@@ -76,26 +87,30 @@ input.user_password {
 
 
 /* 아이디 찾기 */
+
+table {
+	border-collapse: separate;
+	border-spacing: 0 20px;
+}
+
 .searchId_container {
-  position: absolute;
-  width: 600px;
+   width: 600px;
   height: 600px;
   text-align: center;
-  margin-left: -400px;
-  margin-top: -200px;
-  left: 50%;
-  top: 50%;
 
 }
 
 .search_name {
 	width: 350px;
-	height: 30px;
+	height: 50px;
+	font-size: 1em;
+	
 }
-
 .search_name:hover {
-    background: pink;
+    background:#77CFD1;
  	cursor: pointer;
+ 	color: white;
+ 
 }
 .search_name:focus {
    cursor : auto;
@@ -104,12 +119,16 @@ input.user_password {
 
 .search_email {
 	width: 350px;
-	height: 30px;
+	height: 50px;
+	font-size: 1em;
+	
 }
 
 .search_email:hover {
-    background: pink;
- 	cursor: pointer;
+    background: #77CFD1;
+    cursor: pointer;
+    color: white;
+    
 }
 .search_email:focus {
 cursor : auto;
@@ -117,53 +136,49 @@ cursor : auto;
 
 .search_Id {
 	width:360px;
-	height: 35px;
+	height: 50px;
 	background: #77CFD1;
 	border: 1px solid #000000;
-	margin : 0px 0px 5px 150px;
+	margin : 0px 0px 5px 110px;
+	font-size : 1em;
+	
 }
 
 .search_Id:hover {
-	background: pink;
+	background: #77CFD1;
  	cursor : pointer;
+ 	color: white;
+ 	
 }
 
 
 /* 비밀번호 찾기 페이지 */
 
+table {
+	border-collapse: separate;
+	border-spacing: 0 20px;
+}
+
 .searchPassword_container {
-  position: absolute;
-  width: 600px;
+   width: 600px;
   height: 600px;
   text-align: center;
-  margin-left: -400px;
-  margin-top: -200px;
-  left: 50%;
-  top: 50%;
 
 }
 
-.search_name {
-	width: 350px;
-	height: 30px;
-}
-
-.search_name:hover {
-    background: pink;
- 	cursor: pointer;
-}
-.search_name:focus {
-   cursor : auto;
-}
 
 .search_Id2 {
 	width: 350px;
-	height: 30px;
+	height: 50px;
+	font-size: 1em;
+	
 }
 
 .search_Id2:hover {
-    background: pink;
+    background:#77CFD1;
  	cursor: pointer;
+ 	color: white;
+ 	
 }
 .search_Id2:focus {
    cursor : auto;
@@ -172,28 +187,35 @@ cursor : auto;
 
 .search_phone {
 	width: 350px;
-	height: 30px;
+	height: 50px;
+	font-size: 1em;
+	
 }
 
 .search_phone:hover {
-    background: pink;
+    background:#77CFD1;
  	cursor: pointer;
+ 	color: white;
+ 	
 }
 .search_phone:focus {
 cursor : auto;
 	}
 	
 .search_password {
-	width:350px;
-	height: 35px;
+	width:360px;
+	height: 50px;
 	background: #77CFD1;
 	border: 1px solid #000000;
 	margin : 0px 0px 5px 150px;
+	font-size : 1em;
 }
 
 .search_password:hover {
-	background: pink;
+    background:#77CFD1;
  	cursor : pointer;
+ 	color: white;
+ 	
 }
  
  

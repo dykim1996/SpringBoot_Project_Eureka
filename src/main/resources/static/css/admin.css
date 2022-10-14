@@ -224,3 +224,27 @@ button:hover{
     cursor: pointer;
 
 } 
+
+
+
+
+/*폼형식*/
+.form_wrapper{
+	position:relative;
+	
+	
+}
+
+form{
+	position:absolute;
+	margin-top:80px;
+    left:45%;
+    padding:20px;
+    gap:10px;   
+   
+  }
+
+label{
+	
+    padding-top: 3px;
+   }

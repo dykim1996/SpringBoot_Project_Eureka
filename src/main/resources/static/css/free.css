@@ -1,10 +1,20 @@
 @charset "UTF-8";
 
+/* 헤더 푸터 */
+.header{
+	margin-bottom: 20px;
+}
+
+.footer{
+	margin-top: 20px;
 	
+}
+
+
 #free {
 	background-color:#77CFD1;
 	font-size : 25px;
-	margin : auto;
+	margin: auto;
 	padding : 5px 0 10px 15px;
 	width : 60%;
 }
@@ -41,7 +51,8 @@
 
 
 #gdsImg {
-	margin-right:40%;
+	
+	margin-right:42%;
 }
 
 .emdfhr {
@@ -63,26 +74,26 @@
 
 .title {
 	width : 1000px;
-	margin : 200px auto 0 auto;
 	padding : 5px 0 10px 15px;
 }
 
 .content {
-	width : 1000px;
-	margin : 50px;
+	width : 1070px;
+	margin : 25px;
 	padding : 5px 0 400px 15px;
 }
 
 .make-btn {
 	width : 65px;
 	line-height : 25px;
-	top : 70%;
+	top : 61%;
 	right : 20%;
 	position:absolute;
+	
 }
 
 #paging{
-	margin-top : 100px;
+	margin-top : 40px;
 }
 
 #search-txt{
@@ -96,8 +107,6 @@
 	line-height : 30px;
 }
 
-
-
 /* freeDetail */
 .xkdlxmf{
 	text-align : left;
@@ -109,20 +118,23 @@
 	opacity : 0.5;
 }
 
-.aj{
-	text-align : right;
-	padding-left : 20%;
-	opacity : 0.5;
+.dkdlel{
+	font-size : 17px;
+	opacity : 0.8;
+	padding-right : 40%;
 }
 
-#content{
+#detailcontent{
 	font-size : 25px;
 	width : 60%;
 	margin : auto;
-	padding-top : 50px;
+	padding-top : 25px;
 	padding-left : 1%;
 }
 
+#freeReply{
+	font-size:50px;
+}
 
 #detail {
 	background-color:#77CFD1;
@@ -132,23 +144,86 @@
 	width : 60%;
 }
 
+.update-delete {
+	margin-left : 1430px;
+	padding-top : 210px;
+}
+
+
+.btn{
+	margin-left : 1430px;
+	padding-top : 210px;
+}
 
 
 
 /* 댓글 */
 #registReply{
 	font-size : 20px;
-	padding: 30px 10px;
+	padding: 25px 10px;
 	border-radius: 5px;
 	color : white;
 	background-color: #77CFD1;
 	border : 0;
 }
+
 #replyWrite{
-	padding-top : 15%;	
+	
+	
 }
 
 .eotrmf{
 	font-size : 25px;
 	padding-left : 10px;
+}
+
+#replyResult{
+	
+	margin-left:20%;
+	font-size : 20px;
+}
+
+
+
+/* 업데이트 */
+.btn11 {
+	width : 70px;
+	line-height : 30px;
+	background-color: #77CFD1;
+	color : white;
+	font-size : 20px;
+	border-radius: 5px; 
+	
+}
+
+memberIdTd{
+	font-size:50px;	
+}
+
+.btn22 {
+	width : 70px;
+	line-height : 30px;
+	font-size : 20px;
+	border-radius: 5px;
+	margin-left :10px; 
+}
+
+#btn123 {
+	text-align: center;
+	margin-top : 20px;
+}
+
+#update{
+	margin-left :25%; 
+}
+
+.title2 {
+	width : 1000px;
+	padding : 5px 0 10px 15px;
+}
+
+.content2 {
+	width : 1000px;
+	margin-top : 25px;
+	padding : 5px 0 400px 15px;
 }

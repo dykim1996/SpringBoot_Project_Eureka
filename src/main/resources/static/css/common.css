@@ -66,9 +66,13 @@ a{text-decoration: none;}
 	margin-top:3px;
 }
 
-
+.footer{
+	position:relretive;
+	margin: 200px auto;
+	margin-bottom:0px;
+}
 .utilMenu > a {margin-left: 20px;}
-.footer {background-color: #F9F7F7;  padding: 50px 0;}
+.footer { background-color: #F9F7F7;  padding: 50px 0;}
 .footer > div {width: 1100px; margin: auto;}
 .footer > div > h3 {font-size: 25px; margin-bottom: 10px;}
 .footer > div > ul {width: 400px;}

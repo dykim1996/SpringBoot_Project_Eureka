@@ -3,37 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" th:href="@{/css/loginPage.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/regist/loginPage.css}">
 <script type="text/javascript" th:src="@{/js/searchIdAndPwd.js}"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-                   
-            
+	<div th:replace="common/header.html"></div>
 	<br>
-	<h2>아이디 찾기</h2>	
-	<div class="searchId_container">
-		<form action="/member/searchId" method="post">
-			<table>
-			<tr>
-				<th style="width : 200px">이름</th>				
-				<td height="100px"><input type="text" class="search_name" id="name"
-							name="name" placeholder="이름을 입력하세요." required>
-				</td>
-			</tr>
-			<tr>
-				<th style="width : 200px">이메일</th>
-				<td><input type="email" class="search_email"
-				id="email" name="email" placeholder="이메일을 입력하세요." required></td>
-			</tr>
-			</table>
-			<br><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="search_Id" onclick="findId();">아이디 찾기</button>
-		</form>
+	<div class="login_container" style="margin: 50px 350px;">
 		<br>
+	
+		<div class="searchId_container">
+			<form action="/member/searchId" method="post">
+				<table>
+					<tr>
+						<th style="width: 200px;font-size:1.3em;" >이름</th>
+						<td><input type="text" class="search_name"
+							id="name" name="name" placeholder="이름을 입력하세요." required>
+						</td>
+					</tr>
+					<tr>
+						<th style="width: 200px; font-size:1.3em; " >이메일</th>
+						<td><input type="email" class="search_email" id="email"
+							name="email" placeholder="이메일을 입력하세요." required>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<button type="button" class="search_Id" onclick="findId();">아이디
+					찾기</button>
+			</form>
+			<br>
+		</div>
 	</div>
+	<div th:replace="common/footer.html"></div>
+
 
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" th:href="@{/css/loginPage.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/regist/loginPage.css}">
   <script type="text/javascript" th:src="@{/js/event.js}"></script>
     <script>
 	    const message = '[[${message}]]';
@@ -13,7 +13,7 @@
 
 	<div th:replace="common/header.html"></div>
 	
-	<div class="login_container">
+	<div class="login_container" style="margin: 100px 650px;">
 		<form id="loginForm" th:action="@{/member/login}" method="post">
 		
 			<img src="../images/icon-lock.png" class="lock" >
@@ -30,10 +30,11 @@
 				id="password" name="memberPwd" placeholder="비밀번호">
 			</div>
 			<br>
+			<br>
 			<input type="submit" class="user_login" value="로그인" id="loginSubmit">	
 		</form>
 		<br>	
-	
+		<br>
 		<div class="login_etc">
 			<a class="find_id" href="/member/searchId" ><b>아이디 찾기</b></a>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
@@ -42,5 +43,7 @@
 			<a class="regist" href="/member/regist"><b>회원가입</b></a>
 		</div>
 	</div>
+			<div th:replace="common/footer.html"></div>
+	
 </body>
 </html>

@@ -87,32 +87,140 @@
 		            	</div>
 	            	<div class="car-detail-info02">
 		                <h3>차량옵션</h3>
-		                <ul>
-		                    <li><i class="far fa-square"></i>test</li>
-		                    <li><i class="fas fa-check-square"></i>test</li>
-		                    <li><i class="fas fa-check-square"></i>test</li>
-		                    <li><i class="far fa-square"></i>test</li>
-		                    <li><i class="far fa-square"></i>test</li>
-		                    <li><i class="far fa-square"></i>test</li>
-		                    <li><i class="far fa-square"></i>test</li>
-		                    <li><i class="fas fa-check-square"></i>test</li>
-		                    <li><i class="far fa-square"></i>test</li>
-		                    <li><i class="fas fa-check-square"></i>test</li>
-		                    <li><i class="far fa-square"></i>test</li>
-		                    <li><i class="far fa-square"></i>test</li>
-		                    <li><i class="far fa-square"></i>test</li>
-		                    <li><i class="far fa-square"></i>test</li>
-		                    <li><i class="far fa-square"></i>test</li>
-		                    <li><i class="far fa-square"></i>test</li>
-		                    <li><i class="far fa-square"></i>test</li>
-		                    <li><i class="far fa-square"></i>test</li>
-		                    <li><i class="far fa-square"></i>test</li>
-		                    <li><i class="fas fa-check-square"></i>test</li>
-		                    <li><i class="far fa-square"></i>test</li>
-		                    <li><i class="far fa-square"></i>test</li>
-		                    <li><i class="far fa-square"></i>test</li>
-		                    <li><i class="far fa-square"></i>test</li>
-		                </ul>
+		                <table>
+	                        <tr>
+	                            <td>
+		                            <img th:if="${ #strings.contains(sellCarOpt, 'ABS')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, 'ABS')}" src="../images/blank-check-box.png">
+		                            ABS
+	                            </td>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '전동트렁크')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '전동트렁크')}" src="../images/blank-check-box.png">
+	                            	전동트렁크
+	                            </td>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '네비게이션')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '네비게이션')}" src="../images/blank-check-box.png">
+	                            	네비게이션
+	                            </td>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '블랙박스')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '블랙박스')}" src="../images/blank-check-box.png">
+	                            	블랙박스
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '후방카메라')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '후방카메라')}" src="../images/blank-check-box.png">
+	                            	후방카메라
+	                            </td>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '하이패스')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '하이패스')}" src="../images/blank-check-box.png">
+	                            	하이패스
+	                            </td>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '썬루프')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '썬루프')}" src="../images/blank-check-box.png">
+	                            	썬루프
+	                            </td>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '스마트키')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '스마트키')}" src="../images/blank-check-box.png">
+	                            	스마트키
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '핸들열선')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '핸들열선')}" src="../images/blank-check-box.png">
+	                            	핸들열선
+	                            </td>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '가죽시트')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '가죽시트')}" src="../images/blank-check-box.png">
+	                            	가죽시트
+	                            </td>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '열선시트')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '열선시트')}" src="../images/blank-check-box.png">
+	                            	열선시트
+	                            </td>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '전동시트')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '전동시트')}" src="../images/blank-check-box.png">
+	                            	전동시트
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, 'HID')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, 'HID')}" src="../images/blank-check-box.png">
+	                            	HID
+	                            </td>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '레인센서와이퍼')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '레인센서와이퍼')}" src="../images/blank-check-box.png">
+	                            	레인센서와이퍼
+	                            </td>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '블루투스(통화)')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '블루투스(통화)')}" src="../images/blank-check-box.png">
+	                            	블루투스(통화)
+	                            </td>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '블루투스(스트리밍)')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '블루투스(스트리밍)')}" src="../images/blank-check-box.png">
+	                            	블루투스(스트리밍)
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '자동도어잠금')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '자동도어잠금')}" src="../images/blank-check-box.png">
+	                            	자동도어잠금
+	                            </td>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '자동주차시스템')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '자동주차시스템')}" src="../images/blank-check-box.png">
+	                            	자동주차시스템
+	                            </td>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '자동주행시스템')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '자동주행시스템')}" src="../images/blank-check-box.png">
+	                            	자동주행시스템
+	                            </td>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, 'LDWS')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, 'LDWS')}" src="../images/blank-check-box.png">
+	                            	LDWS
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, 'TPMS')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, 'TPMS')}" src="../images/blank-check-box.png">
+	                            	TPMS
+	                            </td>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '도난경보기')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '도난경보기')}" src="../images/blank-check-box.png">
+	                            	도난경보기
+	                            </td>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '전방감지센서')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '전방감지센서')}" src="../images/blank-check-box.png">
+	                            	전방감지센서
+	                            </td>
+	                            <td>
+	                            	<img th:if="${ #strings.contains(sellCarOpt, '후방감지센서')}" src="../images/check-box.png">
+		                            <img th:unless="${ #strings.contains(sellCarOpt, '후방감지센서')}" src="../images/blank-check-box.png">
+	                            	후방감지센서
+	                            </td>
+	                        </tr>
+                    	</table>
 		            </div>
 		            <div class="car-detail-info03">
 		                <h3>차량소개</h3>
@@ -136,6 +244,9 @@
 								</a>
 							</th:block>
 				        </div>
+			        </div>
+			        <div class="date" align="right">
+			        	등록일 : <span th:text="${ trade.sellDate }"></span>
 			        </div>
             	</div>
             	<div class="car-bottom-wrap">

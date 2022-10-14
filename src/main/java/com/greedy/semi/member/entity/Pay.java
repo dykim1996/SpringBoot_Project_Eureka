@@ -4,6 +4,7 @@ package com.greedy.semi.member.entity;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,15 +38,15 @@ public class Pay {
 	@Column(name = "PAY_NO")
     private int payNo;
 	
-	@Column(name = "PAT_AMT")
+	@Column(name = "PAY_AMT")
     private int payAmt;
 	
-	@Column(name = "PAT_DATE")
+	@Column(name = "PAY_DATE")
     private Date payDate;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "ORDER_CODE")
-	private OrderInfo orderCode;
+	private OrderInfo orderInfo;
 		
 	
 

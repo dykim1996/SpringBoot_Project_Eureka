@@ -1,3 +1,6 @@
+application.yml 본인 경로로 수정
+
+
 1, Team - > switch -> new branch
 
 2, 커밋 메세지 작성

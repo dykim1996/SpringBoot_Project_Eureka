@@ -12,12 +12,17 @@ import com.greedy.semi.trade.entity.Trade;
 public interface TradeRepository extends JpaRepository<Trade, Long> {
 	
 	@EntityGraph(attributePaths = {"attachFileList"})
+	@Query("SELECT t " + 
+			 "FROM Trade t " +
+			"WHERE t.sellDelete = :sellDelete " +
+			  "AND t.payStatus = 'N'")
 	Page<Trade> findBySellDelete(String sellDelete, Pageable pageable);
 	
 	@EntityGraph(attributePaths = {"attachFileList"})
 	@Query("SELECT t " + 
 			 "FROM Trade t " +
 			"WHERE t.sellDelete = :sellDelete " +
+			  "AND t.payStatus = 'N' " +
 			  "AND (t.sellCarName LIKE '%' || :searchValue || '%' " +
 			   "OR t.sellCarDes LIKE '%' || :searchValue || '%')")
 	Page<Trade> findBySearchValue(@Param("sellDelete")String sellDelete, @Param("searchValue")String searchValue, Pageable pageable);
@@ -26,9 +31,21 @@ public interface TradeRepository extends JpaRepository<Trade, Long> {
 
 	Trade findBySellNo(Long sellNo);
 
-	Page<Trade> findByPayStatus(@Param("payStatus")String payStatus, @Param("sellDelete")String sellDelete, @Param("searchValue")String searchValue, Pageable pageable);
+	@EntityGraph(attributePaths = {"attachFileList"})
+	@Query(
+			"SELECT t " +
+			  "FROM Trade t " +
+			 "WHERE t.sellDelete = :sellDelete " +
+			   "AND t.payStatus = :payStatus")
+	Page<Trade> findByPayStatus(@Param("payStatus")String payStatus, @Param("sellDelete")String sellDelete, Pageable pageable);
 
+	@EntityGraph(attributePaths = {"attachFileList"})
 	Page<Trade> findBySellDeleteAndPayStatus(String payStatus, String sellDelete, Pageable pageable);
+
 	
+	
+	
+	@Query(value = "SELECT SEQ_SELL_NO.currval FROM dual", nativeQuery = true)
+    public Long getCurrvalSellNoSequence();
 	
 }

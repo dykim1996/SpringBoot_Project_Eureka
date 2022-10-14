@@ -25,7 +25,7 @@ public class MemberDTO implements UserDetails {
     private String memberStatus;
     private String memberRole;
     private int reportCount;
-
+    private Date enrolldate;
 
 	@Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -43,6 +43,13 @@ public class MemberDTO implements UserDetails {
     public String getUsername() {
         return memberId;
     }
+    
+//  
+//    public String getMemberId() {
+//    	return memberId;
+//    }
+    
+ 
 
     // 계정 만료 여부
     @Override
@@ -67,4 +74,6 @@ public class MemberDTO implements UserDetails {
     public boolean isEnabled() {
         return true; // 활성화
     }
+
+
 }

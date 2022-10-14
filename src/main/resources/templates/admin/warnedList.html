@@ -61,7 +61,7 @@
 					<th >휴대전화</th>
 					<th >회원삭제</th>
 				 </tr>
-				 <!--  <tr>
+				   <tr>
                         <th>1</th>
                         <td>송다인</td>
                         <td>greedy123</td>
@@ -113,10 +113,11 @@
                         <td>1993.10.10</td>
                         <td>01045607777</td>
                         <td><button submit="delete">삭제</button></td>
-                    </tr> -->
+                    </tr> 
+                    </table>
+                    </div>
                    
-                   
-				 <tr th:each="member : ${ memberList }"
+                   <!-- <tr th:each="member : ${ memberList }"
 				   
 				    style="cursor:pointer;" >
 					<td></td>
@@ -125,13 +126,13 @@
 					<td th:text="${ member.birthday }"></td>
 					<td th:text="${ member.phone }"></td>
 					<td><button submit="delete">삭제</button></td>
-				</tr>
-				
-				  
-				
-			</table>
-		</div>
+				</tr>-->
+			
+			
 
+			
+			 
+			
 
 	<div th:replace="common/footer.html"></div>
 </body>

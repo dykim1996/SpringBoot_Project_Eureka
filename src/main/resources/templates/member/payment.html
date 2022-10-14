@@ -1,111 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/regist/payment.css}">
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 <body>
-  <table>
-                <tr>
-                    <th class="width-40">
-                        상품명
-                    </th>
-                    <th>
-                        상품기간
-                    </th>
-                    <th>
-                        가격
-                    </th>
-                 </tr>
-                 <tr>
-                    <td>
-                    <input type="text" class="memberEmail" id="memberEmail"
-							name="memberEmail" placeholder="이메일">
-                    </td>
-                    <td>
-                    	<input type="text" class="totalPrice" id="totalPrice"
-							name="totalPrice" placeholder="가격">
-                    </td>
-                    <td>
-                         <input type="text" class="memberName" id="memberName"
-							name="memberName" placeholder="이름">
-                    </td>
-                    <td>
-                        <button type="button" id="payment">결제</button>
-                    </td>
-                </tr>
-			</table>
-
-
+	<div th:replace="common/header.html"></div>
+		<div class="payment_container" style="margin: 100px 400px;">
+ 			<div class="card-body bg-white mt-0 shadow">
+				<input type="hidden" id="sellNo" th:value="${param.sellNo}"/>
+				<h3 class="left" style="color:red;">추가 옵션</h3>
+				<br>
+				<h3 class="left">판매글 프리미엄 등록</h3>
+				<br>
+                <hr style="border: solid 2px #77CFD1;">
+				<div class="pay">
+				<br>
+					<span style="color: rgb(107, 105, 105); font-size:1.25em;" class="left" >차량 판매글을 목록의 최상단으로 올려 광고할 수 있습니다.</span>
+					<br><br><br>
+			</div>
+               <form>
+               		<p style="font-weight: bold; font-size:1.25em ">결제 방식 : 카카오페이</p>
+	      			<br><br>&nbsp;
+	      			<label style="font-size: 1.25em">7일권</label>&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;
+	      			<label style="font-size: 1.25em">15일권</label>&emsp;&emsp;&emsp;&emsp;&nbsp;
+	      			<label style="font-size: 1.25em">30일권</label>
+	      			<br><br>
+	                <label class="box-radio-input"><input type="radio" name="cp_item" value="10000"><span style="font-size: 1.25em">10,000원</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+	                 <label class="box-radio-input"><input type="radio" name="cp_item" value="20000"><span style="font-size: 1.25em">20,000원</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             	    <label class="box-radio-input"><input type="radio" name="cp_item" value="30000"><span style="font-size: 1.25em">30,000원</span></label>
+			</form>
+				<br>
+   				 <p  style="color: #ac2925; margin-top: 30px">※프리미엄 상품의 유효기간은 결제 날짜 기준입니다.</p><br><br>
+                <button type="button" class="btn1" id="charge_kakao">결제하기</button>&emsp;
+                 <button type="button" class="btn2" onclick="location.href='/'">결제취소</button>
+           </div>     
+		 </div>
+		<div th:replace="common/footer.html"></div>
 <script>
 
 /** 결제 **/
-// 결제 금액, 구매자의 이름, 이메일
-$(document).ready(function(){
-var $payment = $("#payment");
 
-const priceAmount = $("#totalPrice");
-const buyerMemberEmail = $("#memberEmail");
-const buyerMemberName = $("#memberName");
-// const form = document.getElementById("payment");
-
-console.log(priceAmount);
-console.log(buyerMemberName);
-console.log(buyerMemberEmail);
-const IMP = window.IMP;
-IMP.init('imp83723126');
-
-
-$payment.click(function() {
-
-
-    // IMP.request_pay(param, callback) 결제창 호출
-    IMP.request_pay({ // param
-        pg: "kakaopay.TC0ONETIME",
-        pay_method: "card",
-        merchant_uid: 'cart_' + new Date().getTime(),
-        name: "Helpring 강의",
-        amount: priceAmount.val(),
-        buyer_email: buyerMemberEmail.val(),
-        buyer_name: buyerMemberName.val(),
-
-    }, function (rsp) { // callback
-
-        /** 결제 검증 **/
-        $.ajax({
-            type: 'POST',
-            url: '/verifyIamport/'+rsp.imp_uid,
-            beforeSend: function(xhr){
-                xhr.setRequestHeader(header, token);
-            }
-        }).done(function(result){
-
-            // rsp.paid_amount와 result.response.amount(서버 검증) 비교 후 로직 실행
-            if(rsp.paid_amount === result.response.amount){
-                alert("결제가 완료되었습니다.");
+    $('#charge_kakao').click(function () {
+        // getter
+	 
+        
+       const IMP = window.IMP;
+        IMP.init('imp83723126');
+        var money = $('input[name="cp_item"]:checked').val();
+        console.log(money);
+        var sellNo = $('#sellNo').val();
+        
+        IMP.request_pay({
+            pg: "kakaopay.TC0ONETIME",
+            pay_method: "card",
+            merchant_uid: 'cart_' + new Date().getTime(),
+            name: '유레카 : 광고',
+            amount: money,
+            buyer_email: 'iamport@siot.do',
+            buyer_name: '구매자이름',
+            buyer_tel: '010-1234-5678',
+            buyer_addr: '인천광역시 부평구',
+            buyer_postcode: '123-456'
+        }, function (rsp) {
+            console.log(rsp);	
+            if (rsp.success) {
+                var msg = '결제가 완료되었습니다.';
+                msg += '고유ID : ' + rsp.imp_uid;
+                msg += '상점 거래ID : ' + rsp.merchant_uid;
+                msg += '결제 금액 : ' + rsp.paid_amount;
+                msg += '카드 승인번호 : ' + rsp.apply_num;
                 $.ajax({
-                    type:'POST',
-                    url:'/member/login',
-                    beforeSend: function(xhr){
-                        xhr.setRequestHeader(header, token);
-                    }
-                }).done(function() {
-                    window.location.reload();
-                }).fail(function(error){
-                        alert(JSON.stringify(error));
-                })
-            } else{
-                alert("결제에 실패했습니다."+"에러코드 : "+rsp.error_code+"에러 메시지 : "+rsp.error_message);
-
+                    type: "POST", 
+                    url: "/user/mypage", //충전 금액값을 보낼 url 설정
+                    data: {
+                        "amount" : money,
+                        "sellNo" : sellNo
+                    },
+                });
+            } else {
+                var msg = '결제에 실패하였습니다.';
+                msg += '에러내용 : ' + rsp.error_msg;
             }
-        })
-    })
-})
-})
-
+            alert(msg);
+            document.location.href="/"; //alert창 확인 후 이동할 url 설정
+        });
+    });
 </script>
 </body>
 

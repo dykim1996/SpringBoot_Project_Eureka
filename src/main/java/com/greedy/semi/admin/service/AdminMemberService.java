@@ -15,7 +15,8 @@ import com.greedy.semi.member.entity.Member;
 @Service
 @Transactional
 public class AdminMemberService {
-	
+
+
 	private final AdminMemberRepository memberRepository;
 	
 	private final ModelMapper modelMapper;
@@ -28,7 +29,7 @@ public class AdminMemberService {
 
 	
 
-	private static final int PAGE_SIZE = 10;
+	private static final int PAGE_SIZE = 7;
 	public static final String SORT_BY = "memberId";
 	public static final String ACC_SECESSION_YN ="N";
 	
@@ -47,7 +48,40 @@ public class AdminMemberService {
 		return memberList.map(member -> modelMapper.map(member, MemberDTO.class));
 	}
 
+
+
+	public Page<MemberDTO> selectWarnedMember(int page, String searchValue) {
+		
+		
+		Pageable pageable = PageRequest.of(page -1 , PAGE_SIZE, Sort.by(SORT_BY).descending());
+		Page<Member> warnedMember = null;
+		
+		if(searchValue  != null && !searchValue.isEmpty()) {
+			
+		}else {
+			warnedMember = memberRepository.findMemberList(pageable);
+		}
+		
+		return warnedMember.map(member -> modelMapper.map(member, MemberDTO.class));
+	}
+
+
+
 	
+
+
+	public void removeMemberId(String memberId) {
+		Member savedMember = memberRepository.findByMemberId(memberId);
+		savedMember.setMemberStatus("Y");
+	}
+
+
+
+
+	
+
+
+
 
 
 }

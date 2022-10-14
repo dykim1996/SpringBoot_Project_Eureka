@@ -3,6 +3,7 @@ package com.greedy.semi.member.entity;
 
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,19 +37,19 @@ public class OrderInfo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ORDER_INFO_SEQ_GENERATOR")
 	@Column(name = "ORDER_CODE")
-    private int orderCode;
+    private Long orderCode;
 	
 	@ManyToOne
 	@JoinColumn(name = "MEMBER_ID")
-    private Member memberId;
+    private Member member;
 	
 	@ManyToOne
 	@JoinColumn(name = "PRODUCT_CODE")
-    private Product productCode;
+    private Product product;
 	
 	@ManyToOne
 	@JoinColumn(name = "SELL_NO")
-	private Trade sellNo;		
+	private Trade trade;		
 	
 
    
